@@ -1,0 +1,59 @@
+#  driver-class-name: oracle.jdbc.OracleDriver
+spring:
+  jpa:
+    # Let Spring figure out database platform dialect.
+    database: default
+  profiles:
+    active: dev
+
+logging:
+  file:
+    max-history: 21
+
+oracle:
+  datasource:
+    username: userName
+    password: passWord
+    
+ldap:
+  domain: company.com
+  url: ldap://theldappri:389 ldap://theldapsec:389
+  rootdn: dc=acslan,dc=ac,dc=company,dc=com	
+---
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:oracle:thin:@testserver:1521:testservice1
+
+oracle:
+  datasource:
+    url: jdbc:oracle:thin:@Akimdbt4ep:1521:testservice2
+
+---
+spring:
+  profiles: dev, default
+  datasource:
+    url: jdbc:oracle:thin:@devserver:1521:devservice1
+
+oracle:
+  datasource:
+    url: jdbc:oracle:thin:@devserver:1521:devservice2
+---
+spring:
+  profiles: qa
+  datasource:
+    url: jdbc:oracle:thin:@qaserver:1521:testservice1
+
+
+oracle:
+  datasource:
+    url: jdbc:oracle:thin:@qaserver:1521:testservice2
+---
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:oracle:thin:@prodserver1:1521:prodservice1
+
+oracle:
+  datasource:
+    url: jdbc:oracle:thin:@prodserver2:1521:prodservice2
