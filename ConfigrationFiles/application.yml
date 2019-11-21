@@ -1,4 +1,3 @@
-#  driver-class-name: oracle.jdbc.OracleDriver
 spring:
   jpa:
     # Let Spring figure out database platform dialect.
@@ -12,8 +11,8 @@ logging:
 
 oracle:
   datasource:
-    username: userName
-    password: passWord
+    username: myusername
+    password: secret
     
 ldap:
   domain: company.com
@@ -27,7 +26,7 @@ spring:
 
 oracle:
   datasource:
-    url: jdbc:oracle:thin:@Akimdbt4ep:1521:testservice2
+    url: jdbc:oracle:thin:@testserver:1521:testservice2
 
 ---
 spring:
@@ -44,7 +43,6 @@ spring:
   datasource:
     url: jdbc:oracle:thin:@qaserver:1521:testservice1
 
-
 oracle:
   datasource:
     url: jdbc:oracle:thin:@qaserver:1521:testservice2
@@ -52,8 +50,8 @@ oracle:
 spring:
   profiles: prod
   datasource:
-    url: jdbc:oracle:thin:@prodserver1:1521:prodservice1
+    url: jdbc:oracle:thin:@prodserver:1521:prodservice1
 
 oracle:
   datasource:
-    url: jdbc:oracle:thin:@prodserver2:1521:prodservice2
+    url: jdbc:oracle:thin:@prodserver:1521:prodservice2
