@@ -6,7 +6,7 @@ logging:
 
 position:
   price:
-    queue: COM.PROJECT.POSITION.PRICE.RYAN7.QUEUE
+    queue: COM.PROJECT.POSITION.PRICE.RYAN0.QUEUE
   
 ---
 spring:
